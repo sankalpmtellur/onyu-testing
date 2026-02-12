@@ -4,6 +4,7 @@ import './App.css'
 export default function App() {
   const [pos, setPos] = useState({ x: 0, y: 0 })
   const [down, setDown] = useState(false)
+  const [showMessage, setShowMessage] = useState(false)
 
   useEffect(() => {
     const handleMove = (event) => {
@@ -26,6 +27,19 @@ export default function App() {
   return (
     <main className="center">
       <h1>ONYU</h1>
+      <button className="cta" onClick={() => setShowMessage(true)}>
+        Try the button
+      </button>
+      {showMessage && (
+        <div className="overlay" role="status" aria-live="polite">
+          <div className="overlay-card">
+            <p>YAY! You clicked a button.</p>
+            <button className="cta cta--ghost" onClick={() => setShowMessage(false)}>
+              Close
+            </button>
+          </div>
+        </div>
+      )}
       <div
         className={`cursor ${down ? 'cursor--down' : ''}`}
         style={{ transform: `translate3d(${pos.x}px, ${pos.y}px, 0)` }}
