@@ -1,0 +1,12 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  cursor: none;
+  background: radial-gradient(1200px 600px at 20% 10%, #ffffff, #e9eef5 60%, #dfe7f1 100%);
+  color: #0e0f12;
+}
